@@ -1,0 +1,19 @@
+.main{
+    background-color: black;
+    width: 500px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border: 20px solid gray;
+    position: relative;
+}
+.block1{
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    position: absolute;
+    bottom:0px;
+    left: 250px;
+    border: 1px solid white;
+}
