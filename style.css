@@ -1,0 +1,65 @@
+@font-face {
+    font-family: 'Emulogic';
+    src: url('emulogic.eot');
+    src: url('emulogic.eot?#iefix') format('embedded-opentype'),
+         url('emulogic.woff2') format('woff2'),
+         url('emulogic.woff') format('woff'),
+         url('emulogic.ttf') format('truetype'),
+         url('emulogic.svg#emulogic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    background: linear-gradient( #0B3C5D, #0F4C75, #1A659E, #1D6FA3,#0F4C75, #0B3C5D);
+    font-family: 'Emulogic', sans-serif;
+}
+#title_main{
+
+    width: 60vw;
+    height: 80vh;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+#image_title_place{
+    width: 40vw;
+    height: 30vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#logo1{
+    width: 70%;
+    height: auto;
+}
+#menu_place{
+
+    width: 30vw;
+    height: 40vh;
+    margin:0 auto;
+    margin-top: 50px;
+}
+.option{
+    margin: 0 auto;
+    width: 25vw;
+    height: 9vh;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px 5px 5px 5px;
+    color: #e4e4ed;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 5px solid #1E90FF; 
+    border-radius: 5px; 
+    box-shadow: 0 0 10px 2px #1E90FF; 
+}
+.option:hover{
+    border:5px solid #e5bd00;
+    color: #f0f306;
+    box-shadow: none;
+
+}
