@@ -1,19 +1,196 @@
-.main{
-    background-color: black;
-    width: 500px;
-    height: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    border: 20px solid gray;
-    position: relative;
+@font-face {
+    font-family: 'Emulogic';
+    src: url('emulogic.eot');
+    src: url('emulogic.eot?#iefix') format('embedded-opentype'),
+        url('emulogic.woff2') format('woff2'),
+        url('emulogic.woff') format('woff'),
+        url('emulogic.ttf') format('truetype'),
+        url('emulogic.svg#emulogic') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
-.block1{
-    width: 20px;
-    height: 20px;
-    background-color: red;
+
+body {
+    background-image: url("img/tlo.png");
+    width: 100%;
+    font-family: 'Emulogic', sans-serif;
+}
+
+#menu_place {
+    justify-content: center;
+    align-items: center;
+}
+
+.option {
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    font-size: 35px;
+    /*border: solid red; */
+    width: 15%;
+    height: 50px;
+    text-align: center;
+
+
+    --c: white;
+    /* the color */
+    --b: .1em;
+    /* border length*/
+    --d: 20px;
+    /* the cube depth */
+
+    --_s: calc(var(--d) + var(--b));
+
+    border: solid #0000;
+    border-width: var(--b) var(--b) var(--_s) var(--_s);
+    background:
+        conic-gradient(at left var(--d) bottom var(--d),
+            #0000 90deg, rgb(255 255 255 /0.3) 0 225deg, rgb(255 255 255 /0.6) 0) border-box,
+        conic-gradient(at left var(--_s) bottom var(--_s),
+            #0000 90deg, var(--c) 0) 0 100%/calc(100% - var(--b)) calc(100% - var(--b)) border-box;
+    transform: translate(calc(var(--d)/-1), var(--d));
+    clip-path:
+        polygon(var(--d) 0%,
+            var(--d) 0%,
+            100% 0%,
+            100% calc(100% - var(--d)),
+            100% calc(100% - var(--d)),
+            var(--d) calc(100% - var(--d)));
+    transition: 0.5s;
+    padding-top: 15px;
+}
+
+.option:hover {
+    transform: translate(0, 0);
+    clip-path:
+        polygon(0% var(--d),
+            var(--d) 0%,
+            100% 0%,
+            100% calc(100% - var(--d)),
+            calc(100% - var(--d)) 100%,
+            0% 100%);
+}
+
+#title_screen {
+    margin: 0;
+    border: 0;
+
+}
+
+#title_main {
+    width: 100%;
+    display: flex;
+}
+
+li {
+    text-align: center;
+}
+
+#highscore {
     position: absolute;
-    bottom:0px;
-    left: 250px;
-    border: 1px solid white;
+    padding: 5px;
+    cursor: pointer;
+    margin-top: 50px;
+    color: white;
+
+    font-weight: bold;
+    font-size: 40px;
+    margin-left: 60%;
+    --c: white;
+    /* the color */
+    --b: .1em;
+    /* border length*/
+    --d: 20px;
+    /* the cube depth */
+
+    --_s: calc(var(--d) + var(--b));
+
+    border: solid #0000;
+    border-width: var(--b) var(--b) var(--_s) var(--_s);
+    background:
+        conic-gradient(at left var(--d) bottom var(--d),
+            #0000 90deg, rgb(255 255 255 /0.3) 0 225deg, rgb(255 255 255 /0.6) 0) border-box,
+        conic-gradient(at left var(--_s) bottom var(--_s),
+            #0000 90deg, var(--c) 0) 0 100%/calc(100% - var(--b)) calc(100% - var(--b)) border-box;
+    transform: translate(calc(var(--d)/-1), var(--d));
+    clip-path:
+        polygon(var(--d) 0%,
+            var(--d) 0%,
+            100% 0%,
+            100% calc(100% - var(--d)),
+            100% calc(100% - var(--d)),
+            var(--d) calc(100% - var(--d)));
+    transition: 0.5s;
+    padding-top: 15px;
 }
+
+#highscore:hover {
+    transform: translate(0, 0);
+    clip-path:
+        polygon(0% var(--d),
+            var(--d) 0%,
+            100% 0%,
+            100% calc(100% - var(--d)),
+            calc(100% - var(--d)) 100%,
+            0% 100%);
+}
+
+
+
+
+/*
+#title_main {
+
+    width: 60vw;
+    height: 80vh;
+    margin: 0;
+    margin-top: 30px;
+}
+
+#image_title_place {
+    width: 40vw;
+    height: 30vh;
+
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo1 {
+    width: 70%;
+    height: auto;
+}
+
+#menu_place {
+
+    width: 30vw;
+    height: 40vh;
+    margin: 0;
+    margin-top: 50px;
+}
+
+.option {
+    margin: 0;
+    width: 25vw;
+    height: 9vh;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px 5px 5px 5px;
+    color: #e4e4ed;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 5px solid #1E90FF;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px #1E90FF;
+}
+
+.option:hover {
+    border: 5px solid #e5bd00;
+    color: #f0f306;
+    box-shadow: none;
+
+} */
