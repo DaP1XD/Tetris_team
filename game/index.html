@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fontello/css/fontello.css">
+    <title>Tetris</title>
+</head>
+<body>
+    <div class="main">
+         <div class="container">
+                    
+        <div class="game_board">
+            <div id="button_main" class="button_pause">
+                <button id="button1" onclick="PauseOrUnpause(1)"><i class="icon-pause"></i></button>
+                
+            </div>
+            <div class="empty_place">
+                <div class="info_place">
+                    <div class="score_place">
+                        Score
+                        <div class="score_1">0</div>
+                    </div>
+                    <div class="level_place">
+                        Level
+                        <div id="level_1">1</div>
+                    </div>
+                    <div class="rows">
+                        Lines
+                        <div id="numRowsDestroyed">0</div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="game_place">
+                <canvas id="tetris" width="300" height="600"></canvas>
+            </div>
+            <div class="rest_place">
+                <div class="next_place">
+                    <div class="next_title">Next</div>
+                    <div class="counter_and_timer">
+                        <div class="timer">4</div>
+                    </div>
+                    <canvas id="next" width="80" height="60"></canvas>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <div class="menu_stop">
+        <div class="pause_title">Paused</div>
+        <input id="button_2" type="button" value="RESUME" onclick="PauseOrUnpause(2)">
+        <input class="button_3" type="button" value="OPTIONS" onclick="options_show()" >
+        <input class="button_3" type="button" value="HOW TO PLAY" onclick="how_to_play_show()" >
+        <input class="button_3" type="button" onclick="exit()" value="EXIT" >
+    </div>
+    <div class="how_to_play_place">
+        <div class="how_to_play_title">GENERAL GAMEPLAY INFO</div>
+        <div class="info_gameplay">
+            <div class="info_gameplay_1">
+                <div class="description_place_how_to_play">
+                Cel - Twoim celem jest wykorzystanie umiejętności organizacyjnych oraz wytrzymałości, aby usunąć jak najwięcej linii.
+                </div>
+            </div>
+            <div class="info_gameplay_1">
+                <div class="description_place_how_to_play">
+                    Wyczyść linie - Manewruj spadającymi Tetriminosami, aby dopasować je do siebie. Aby wyczyścić linię, wypełnij każdy kwadrat w jednym rzędzie.
+                    </div>
+            </div>
+            <div class="info_gameplay_1">
+                <div class="description_place_how_to_play">
+                    Zdobywaj punkty - Usuwając linie, zdobędziesz punkty. Za każdą usuniętą linię otrzymasz aż ich 100.
+                    </div>
+            </div>
+            <div class="info_gameplay_1">
+                <div class="description_place_how_to_play">
+                    Następny blok - Podgląd nadchodzącego Tetrimino pomoże zaplanować z wyprzedzeniem, aby zwiększyć swoje możliwości zdobywania punktów.
+                    </div>
+            </div>
+            <div class="info_gameplay_1">
+                <div class="description_place_how_to_play">
+                    Koniec gry - Jeżeli ułożysz Tetrimino zbyt wysoko, gra się zakończy.
+                    </div>
+            </div>
+        </div>
+        <div class="control_gameplay">
+            <div class="control_place">
+                <div class="control_place_1">
+                    <div class="button_control_place">
+                        <div class="button_1_control">
+                            <i class="icon-up"></i>
+                        </div>
+                    </div>
+                    <div class="description_control_place">Obracanie bloku</div>
+                </div>
+                <div class="control_place_1">
+                    <div class="button_control_place">
+                        <div class="button_1_control">
+                            <i class="icon-down"></i>
+                        </div>
+                    </div>
+                    <div class="description_control_place">Blok spadnie szybciej</div>
+                </div>
+                <div class="control_place_1">
+                    <div class="button_control_place">
+                        <div class="button_1_control">
+                            <i class="icon-left"></i>
+                        </div>
+                    </div>
+                    <div class="description_control_place">Przesunięcie bloku w lewo</div>
+                </div>
+                <div class="control_place_1">
+                    <div class="button_control_place">
+                        <div class="button_1_control">
+                            <i class="icon-right"></i>
+                        </div>
+                    </div>
+                    <div class="description_control_place">Przesunięcie bloku w prawo</div>
+                </div>
+            </div>
+        </div>
+            <div class="return_menu_stop_place">
+                <input type="submit" class="return_button_1" value="DONE" onclick="hide_info()">
+            </div>
+    </div>
+    <div class="options_place">
+        <div class="options_place_title">OPTIONS</div>
+        <div class="options_place_buttons_all">
+            <div class="options_place_1">
+                <div class="options_description_1">Flip block</div>
+                <div class="options_button_1">
+                    <div class="button_bind_1" data-bind="rotate">Arrow Up</div>
+                </div>
+            </div>
+             <div class="options_place_1">
+                <div class="options_description_1">Move left</div>
+                <div class="options_button_1">
+                    <div class="button_bind_1" data-bind="left">Arrow Left</div>
+                </div>
+             </div>
+            <div class="options_place_1">
+                <div class="options_description_1">Move right</div>
+                <div class="options_button_1">
+                    <div class="button_bind_1" data-bind="right">Arrow Right</div>
+                </div>
+            </div>
+            <div class="options_place_1">
+                <div class="options_description_1">Move down</div>
+                <div class="options_button_1">
+                    <div class="button_bind_1" data-bind="down">Arrow Down</div>
+                </div>
+            </div>
+            <div class="options_place_1">
+                <div class="options_description_1">Hard drop</div>
+                <div class="options_button_1">
+                    <div class="button_bind_1" data-bind="hard">Space</div>
+                </div>
+            </div>
+            <div class="options_place_1">
+                <div class="options_description_1">Music</div>
+                <div class="options_button_1">
+                    <input type="checkbox" id="music_button">
+                </div>
+            </div>
+            <div class="options_place_1">
+                <div class="options_description_1">Sound effects</div>
+                <div class="options_button_1">
+                    <input type="checkbox" id="sound_button">
+                </div>
+            </div>
+            
+           
+            <div class="return_menu_stop_place">
+                <input type="submit" class="return_button_1" value="DONE" onclick="hide_options()">
+            </div>
+        </div>
+    </div>
+    
+</div>
+   
+   
+    <script src="tetrominoes.js"></script>
+    <script src="tetris.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
