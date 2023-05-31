@@ -11,7 +11,9 @@
 }
 
 body {
-    background-image: url("img/tlo.png");
+    background-color: black;
+    overflow-x: hidden;
+    /*background-image: url("img/tlo.png");*/
     width: 100%;
     font-family: 'Emulogic', sans-serif;
 }
@@ -59,7 +61,6 @@ body {
     transition: 0.5s;
     padding-top: 15px;
 }
-
 .option:hover {
     transform: translate(0, 0);
     clip-path:
@@ -74,7 +75,7 @@ body {
 #title_screen {
     margin: 0;
     border: 0;
-
+    display: none;
 }
 
 #title_main {
@@ -135,9 +136,112 @@ li {
             0% 100%);
 }
 
+#logo_place{
+    width: 1000px;
+    min-height: 400px;
+    position: absolute;
+    top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    opacity: 0;
+}
+#logo_place2{
+    width: 1000px;
+    min-height: 400px;
+    position: absolute;
+    top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    opacity: 0;
+}
+#logo1_lobby{
+    width: 100%;
+    height: 100%;
+}
 
+  #zsl_place{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #wtt_place{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #text_place{
+    width: 1000px;
+    min-height: 400px;
+    position: absolute;
+    top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 130px;
+    color: white;
+    opacity: 0;
+  }
+  .zsl_photo{
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+  #wtt_place{
+    width: 100%;
+    min-height: 250px;
+  }
+  .wtt_photo{
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+  @keyframes photo-zoom {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
 
-
+  }
+  @keyframes photo-hide{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+  }
+  #text_present_place{
+    width: 1000px;
+    min-height: 300px;
+    position: absolute;
+    left: 50%;
+    top:35%;
+    transform: translate(-50%,0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 130px;
+    color: white;
+    opacity: 1;
+  }
 /*
 #title_main {
 

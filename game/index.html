@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="fontello/css/fontello.css">
+    <script src="https://kit.fontawesome.com/e02647bd62.js" crossorigin="anonymous"></script>
     <title>Tetris</title>
 </head>
 <body>
@@ -25,7 +26,7 @@
                     </div>
                     <div class="level_place">
                         Level
-                        <div class="level_1">1</div>
+                        <div id="level_1">1</div>
                     </div>
                     <div class="rows">
                         Lines
@@ -48,10 +49,27 @@
             </div>
         </div>
     </div>
+
+    <div class="game_over">
+        <div class="pause_title"><h1>GAME OVER</h1></div>
+        <div class="ovr_score">
+            <div class="ovr_points_header">Score</div>
+            <div class="ovr_points"></div>
+        </div>
+        
+        <div class="ovr-user">
+            <input type="text" id="currPlayer" placeholder="Wpisz nick">
+            <input type="button" id="ovr-btn" onclick="getNick()" value="OK">
+        </div>
+        <div class="ovr-back">
+            <button class="ovr-btn2" onclick="exit()"><i class="fa-solid fa-house fa-xl" style="color: #ffffff;"></i></i></button>
+            <button class="ovr-btn2" onclick="refresh()"><i class="fa-solid fa-arrows-rotate fa-xl" style="color: #ffffff;"></i></button>
+        </div>
+    </div>
     <div class="menu_stop">
         <div class="pause_title">Paused</div>
         <input id="button_2" type="button" value="RESUME" onclick="PauseOrUnpause(2)">
-        <input class="button_3" type="button" value="OPTIONS" >
+        <input class="button_3" type="button" value="OPTIONS" onclick="options_show()" >
         <input class="button_3" type="button" value="HOW TO PLAY" onclick="how_to_play_show()" >
         <input class="button_3" type="button" onclick="exit()" value="EXIT" >
     </div>
@@ -124,6 +142,58 @@
                 <input type="submit" class="return_button_1" value="DONE" onclick="hide_info()">
             </div>
     </div>
+    <div class="options_place">
+        <div class="options_place_title">OPTIONS</div>
+        <div class="options_place_buttons_all">
+            <div class="options_place_1">
+                <div class="options_description_1">Flip block</div>
+                <div class="options_button_1">
+                    <div class="button_bind_1" data-bind="rotate">Arrow Up</div>
+                </div>
+            </div>
+             <div class="options_place_1">
+                <div class="options_description_1">Move left</div>
+                <div class="options_button_1">
+                    <div class="button_bind_1" data-bind="left">Arrow Left</div>
+                </div>
+             </div>
+            <div class="options_place_1">
+                <div class="options_description_1">Move right</div>
+                <div class="options_button_1">
+                    <div class="button_bind_1" data-bind="right">Arrow Right</div>
+                </div>
+            </div>
+            <div class="options_place_1">
+                <div class="options_description_1">Move down</div>
+                <div class="options_button_1">
+                    <div class="button_bind_1" data-bind="down">Arrow Down</div>
+                </div>
+            </div>
+            <div class="options_place_1">
+                <div class="options_description_1">Hard drop</div>
+                <div class="options_button_1">
+                    <div class="button_bind_1" data-bind="hard">Space</div>
+                </div>
+            </div>
+            <div class="options_place_1">
+                <div class="options_description_1">Music</div>
+                <div class="options_button_1">
+                    <input type="checkbox" id="music_button">
+                </div>
+            </div>
+            <div class="options_place_1">
+                <div class="options_description_1">Sound effects</div>
+                <div class="options_button_1">
+                    <input type="checkbox" id="sound_button">
+                </div>
+            </div>
+            
+           
+            <div class="return_menu_stop_place">
+                <input type="submit" class="return_button_1" value="DONE" onclick="hide_options()">
+            </div>
+        </div>
+    </div>
     
 </div>
    
@@ -131,5 +201,6 @@
     <script src="tetrominoes.js"></script>
     <script src="tetris.js"></script>
     <script src="script.js"></script>
+    <script src="script1.js"></script>
 </body>
 </html>
