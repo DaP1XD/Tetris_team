@@ -1,0 +1,242 @@
+body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background: linear-gradient(
+      135deg,
+      #1a1d23,
+      #28323f,
+      #090a0e,
+      #34495e,
+      #192734
+    );
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+  }
+#lobby_all{
+    width: 100vw;
+    height: 100vh;
+}
+#logo_place{
+    width: 700px;
+    min-height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#logo1{
+    width: 90%;
+    height: 90%;
+}
+#options_place{
+    width: 400px;
+    min-height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#button_2{
+    width: 80%;
+    background-color: #41942e;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    font-size: 17px;
+    box-shadow: 0 0 10px rgba(0, 128, 0, 0.5), 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+.button_3{
+    width: 80%;
+    height: 50px;
+    background-color: #6d6c6d;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    font-size: 17px;
+    box-shadow: 0 0 10px rgba(109, 108, 109, 0.5);
+    transition: background-color 0.3s ease;
+}
+#button_2:hover {
+    background-color: #57b846;
+  }
+  .button_3:hover {
+    background-color: #848384;
+  }
+  .how_to_play_place {
+    font-family: "Emulogic", sans-serif;
+    width: 800px;
+    min-height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #1a1d23, #28323f);
+    border: 5px solid #40444f;
+    border-radius: 5px;
+    display: none;
+    flex-wrap: wrap;
+  }
+  .how_to_play_title {
+    width: 100%;
+    height: 70px;
+    color: white;
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .info_gameplay {
+    width: 70%;
+    min-height: 330px;
+  }
+  .control_gameplay {
+    width: 30%;
+    min-height: 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .info_gameplay_1 {
+    width: 100%;
+    min-height: 60px;
+    margin-top: 10px;
+    color: white;
+    display: flex;
+  }
+  .description_place_how_to_play {
+    width: 100%;
+    min-height: 100%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 2%;
+  }
+  .control_place {
+    width: 90%;
+    min-height: 330px;
+    border-radius: 5px;
+  }
+  .control_place_1 {
+    width: 100%;
+    min-height: 75px;
+    margin-top: 5px;
+    display: flex;
+  }
+  .button_control_place {
+    width: 30%;
+    min-height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .button_1_control {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .description_control_place {
+    width: 65%;
+    min-height: 75px;
+    padding-left: 5%;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+  }
+  .return_menu_stop_place {
+    width: 100%;
+    min-height: 50px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .return_button_1 {
+    width: 120px;
+    min-height: 40px;
+    cursor: pointer;
+    background-color: #40444f;
+    border: 3px solid #6d6c6d;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+  }
+  .return_button_1:hover {
+    background-color: #6d6c6d;
+  }
+  #scoreboard_place{
+    font-family: "Emulogic", sans-serif;
+    width: 500px;
+    min-height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #1a1d23, #28323f);
+    border: 5px solid #40444f;
+    border-radius: 5px;
+    display: none;
+    flex-wrap: wrap;
+  }
+
+  #title_scoreboard_place{
+    width: 100%;
+    height: 70px;
+    color: white;
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .scoreboard_1{
+    width: 100%;
+    min-height: 60px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+  }
+  .top_place{
+    width: 100px;
+    height: 70px;
+    color: white;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nickname_score{
+    width: 50%;
+    height: 70px;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 35px;
+  }
+  .points_place{
+    margin-left: 10px;
+    width: 25%;
+    height: 70px;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 35px;
+  }
